@@ -6,7 +6,7 @@ class ProductProvider extends React.Component{
       products:[],
       detailproducts:detailProduct,
       cart:[],
-      modelOpen:true,
+      modelOpen:false,
       modalProduct:detailProduct
   }
   componentDidMount()
@@ -27,7 +27,7 @@ class ProductProvider extends React.Component{
    const product=this.state.products.find(item=>item.id===id);
    console.log("Product returned : ",product);
    return product;
-  }
+ };
   handleDetail=(id)=>{
     const product=this.getItem(id);
     this.setState(()=>{
@@ -45,18 +45,18 @@ class ProductProvider extends React.Component{
     this.setState(()=>{
       return {products:tempProducts,cart:[...this.state.cart,product]}
     },()=>{console.log(this.state)})
-  }
+  };
   openModal=id=>{
     const product=this.getItem(id)
     this.setState(()=>{
       return {modalProduct:product,modalOpen:true}
     },()=>{console.log("ERROR")})
-  }
-  closeModal=id=>{
+  };
+  closeModal=()=>{
     this.setState(()=>{
       return {modalOpen:false}
     },()=>{console.log("ERROR")})
-  }
+  };
   render()
   {
     return(
@@ -73,5 +73,4 @@ class ProductProvider extends React.Component{
   }
 }
 const ProductConsumer=ProductContext.Consumer;
-
 export {ProductProvider,ProductConsumer};

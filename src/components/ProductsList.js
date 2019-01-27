@@ -19,8 +19,7 @@ render()
       {
         value=>{
           return value.products.map(product =>{
-            return <Products  key={product.id} product={product}/>
-
+            return <Products key={product.id} product={product}/>
           });
         }}
      </ProductConsumer>

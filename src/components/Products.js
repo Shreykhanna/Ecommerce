@@ -18,7 +18,7 @@ render()
         <Link to="/details">
           <img src={img} alt="product image" className="card-img-top"/>
         </Link>
-        <button className="cart-btn" disabled={inCart ? true : false} onClick={()=>value.addToCart(id),()=>value.openModal(id)}>
+        <button className="cart-btn" disabled={inCart ? true : false} onClick={()=>{value.addToCart(id);value.openModal(id)}}>
             {inCart?(<p className="text-capitalize mb-0" disabled></p>): (<i className="fas fa-cart-plus"/>)}
         </button>
     </div>

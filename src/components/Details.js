@@ -9,7 +9,7 @@ render()
   return(
   <ProductConsumer>
     {
-      value =>{
+      value=>{
       const{id,company,img,info,price,title,inCart}=value.detailproducts
       return(
       <div className="container py-5">
@@ -43,19 +43,16 @@ render()
           disabled={inCart ? true : false}
           onClick={
             ()=>{
-              value.addToCart(id);
-              value.openModal(id);
+               value.addToCart(id);
+               value.openModal(id);
               }
         }>
           {inCart ? "In cart": "Add to cart"}
-
-          </ButtonContainer>
+       </ButtonContainer>
         </div>
       </div>
     </div>
-      )
-    }}
-
+      )}}
 </ProductConsumer>
 )
 }
