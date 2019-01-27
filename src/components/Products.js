@@ -14,13 +14,11 @@ render()
     <div className="card">
     <ProductConsumer>
     {value =>(
-      <div className="img-container p-5" onClick={
-        value.handleDetail(id)
-      }>
+      <div className="img-container p-5" onClick={()=>value.handleDetail(id)}>
         <Link to="/details">
           <img src={img} alt="product image" className="card-img-top"/>
         </Link>
-        <button className="cart-btn" disabled={inCart ? true : false} onClick={()=>{value.addToCart(id)}}>
+        <button className="cart-btn" disabled={inCart ? true : false} onClick={()=>value.addToCart(id),()=>value.openModal(id)}>
             {inCart?(<p className="text-capitalize mb-0" disabled></p>): (<i className="fas fa-cart-plus"/>)}
         </button>
     </div>
@@ -33,8 +31,8 @@ render()
     <h5 className="text-blue font-italic mb-0">
       <span className="mr-1">${price}</span>
     </h5>
-     </div>
     </div>
+  </div>
     </ProductWrapper>
   )
 }

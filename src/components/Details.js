@@ -39,12 +39,15 @@ render()
           <ButtonContainer>Back to homepage</ButtonContainer>
           </Link>
           <ButtonContainer
-          cart 
+          cart
           disabled={inCart ? true : false}
-          onClick={()=>{
-            value.addToCart(id)
-          }}>
-          {inCart ? "inCart": "Add to cart"}
+          onClick={
+            ()=>{
+              value.addToCart(id);
+              value.openModal(id);
+              }
+        }>
+          {inCart ? "In cart": "Add to cart"}
 
           </ButtonContainer>
         </div>
