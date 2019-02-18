@@ -31,7 +31,7 @@ render()
           }
       }}
       </ProductConsumer>
-        </section>
+      </section>
 
 
 

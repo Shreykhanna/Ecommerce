@@ -5,7 +5,7 @@ import {ButtonContainer} from '../components/Button'
 import {Link} from 'react-router-dom'
 export default class Modal extends React.Component{
   state={
-
+         
   }
   render()
   {
@@ -57,5 +57,4 @@ align-items:center;
 justify-content:center;
 #modal{
   background:var(--mainWhite)
-}
-`
+}`

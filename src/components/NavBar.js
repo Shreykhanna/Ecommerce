@@ -16,12 +16,20 @@ render()
    <Link to="/" className="nav-link">Products</Link>
    </li>
    </ul>
+   <div className="ml-auto">
+   <Link to="/signup" className="ml-auto">
+   <ButtonContainer>
+   <span className="mr-1"></span>
+    SignUp
+   </ButtonContainer>
+   </Link>
    <Link to="/cart" className="ml-auto">
    <ButtonContainer>
    <span className="mr-2">
     <i className="fas fa-cart-plus"/>
-    </span>My cart</ButtonContainer >
+    </span>My Cart</ButtonContainer >
    </Link>
+  </div>
   </NavWrapper>
   )}
 }
@@ -31,6 +39,4 @@ background:var(--mainBlue);
   color:var(--mainWhite)!important;
   font-size:2.3rem;
   text-transform:capitalize;
-}
-
-`
+}`

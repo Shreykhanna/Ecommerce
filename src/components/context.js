@@ -2,7 +2,7 @@ import React from 'react'
 import {storeProducts,detailProduct} from '../data'
 const ProductContext=React.createContext();
 class ProductProvider extends React.Component{
-  state={
+state={
       products:[],
       detailproducts:detailProduct,
       cart:[],
@@ -25,7 +25,7 @@ class ProductProvider extends React.Component{
     this.setState(()=>{
       return {products:tempProducts}
     })
-  }
+  };
   getItem=(id)=>{
    const product=this.state.products.find(item=>item.id===id);
    console.log("Product returned : ",product);
@@ -84,8 +84,8 @@ class ProductProvider extends React.Component{
         cart:[...tempCart]
       }
     },()=>{this.addTotal()})
+   }
 }
-    }
   removeItem=(id)=>{
     let tempProducts=[...this.state.products]
     let tempCart=[...this.state.cart]
@@ -140,7 +140,6 @@ class ProductProvider extends React.Component{
           decrement:this.decrement,
           removeItem:this.removeItem,
           clearCart:this.clearCart
-
         }}>
           {this.props.children}
         </ProductContext.Provider>

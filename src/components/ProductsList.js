@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import Products from  '../components/Products'
 import Title from '../components/Title'
 import {storeProducts} from '../data'
@@ -21,7 +21,8 @@ render()
           return value.products.map(product =>{
             return <Products key={product.id} product={product}/>
           });
-        }}
+        }
+      }
      </ProductConsumer>
     </div>
     </div>

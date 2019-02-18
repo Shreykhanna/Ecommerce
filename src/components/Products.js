@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import ProductList from '../components/ProductsList'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
@@ -19,9 +19,9 @@ render()
           <img src={img} alt="product image" className="card-img-top"/>
         </Link>
         <button className="cart-btn" disabled={inCart ? true : false} onClick={()=>{value.addToCart(id);value.openModal(id)}}>
-            {inCart?(<p className="text-capitalize mb-0" disabled></p>): (<i className="fas fa-cart-plus"/>)}
+            {inCart ? (<p className="text-capitalize mb-0" disabled></p>) : (<i className="fas fa-cart-plus"/>)}
         </button>
-    </div>
+      </div>
       )}
     </ProductConsumer>
     <div className="card-footer d-flex justify-content-between">
@@ -94,6 +94,4 @@ const ProductWrapper=styled.div`
 .cart-btn:hover{
   color: var(--mainBlue);
   cursor:pointer;
-}
-
-`
+}`
