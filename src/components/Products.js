@@ -9,6 +9,7 @@ export default class Product extends React.Component{
 render()
 {
   const {id,img,title,price,inCart}=this.props.product
+  console.log(id,img,title,price,inCart)
   return(
     <ProductWrapper className="col 9 mx-auto col-md-6 col-lg-3 my-3">
     <div className="card">

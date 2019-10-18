@@ -10,7 +10,7 @@ state={
       modalProduct:detailProduct,
       cartSubTotal:0,
       cartTax:0,
-      cartTotal:0
+      cartTotal:0 
   }
   componentDidMount()
   {
@@ -32,6 +32,7 @@ state={
    return product;
  };
   handleDetail=(id)=>{
+    console.log("Id passed to handleDetail : ",id)
     const product=this.getItem(id);
     this.setState(()=>{
       return{detailproducts:product}
@@ -130,7 +131,8 @@ state={
   render()
   {
     return(
-        <ProductContext.Provider value={{
+        <ProductContext.Provider 
+        value={{
           ...this.state,
           handleDetail:this.handleDetail,
           addToCart:this.addToCart,
@@ -142,6 +144,7 @@ state={
           clearCart:this.clearCart
         }}>
           {this.props.children}
+          
         </ProductContext.Provider>
         )
   }

@@ -2,6 +2,7 @@ import React from "react"
 import {ProductConsumer} from '../components/context'
 import {Link} from 'react-router-dom'
 import {ButtonContainer} from '../components/Button'
+import DateFormat from 'dateformat'
 export default class Details extends React.Component{
 
 render()
