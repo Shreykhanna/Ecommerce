@@ -1,7 +1,11 @@
 import React from 'react'
 import { Container, Form, Button } from 'semantic-ui-react'
+import {userLoggedIn} from '../../actions/actions'
+import {connect} from 'react-redux'
 
-export default class SignUp extends React.Component {
+import store from '../../store/store'
+
+class SignUp extends React.Component {
   state = {
     email: "",
     password: "",
@@ -17,7 +21,8 @@ export default class SignUp extends React.Component {
   }
   onSubmit = (event) => {
     event.preventDefault();
-    this.props.userSignUpRequests(this.state)
+    store.dispatch(userLoggedIn('logged_in',this.state.email,this.state.password))
+    console.log("State of the store : ",store.getState());
   }
   render() {
     const { loading, errors } = this.state;
@@ -43,9 +48,11 @@ export default class SignUp extends React.Component {
               name="password"
               onChange={this.onChange} />
           </Form.Field>
+          {}
           <Button primary> SignUp </Button>
         </Form>
       </Container>
     )
   }
 }
+export default connect(null,{userLoggedIn})(SignUp)

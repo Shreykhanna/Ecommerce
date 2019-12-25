@@ -1,16 +1,26 @@
-const USER_LOGGED_IN="USER_LOGGED_IN"
-const USER_LOGGED_OUT="USER_LOGGED_OUT"
-let nextid=0
-export function userLoggedIn(user)
+export const userLoggedIn=(action,username,password)=>(
+  console.log(action+" , "+username+" , "+password),
 {
-  return{
-    type:USER_LOGGED_IN,
-    user
-  }
+
+    type:'USER_LOGGED_IN',
+    username,
+    password,
+    action
+    
+})
+export const userLoggedOut=action=>(
+  {
+  
+   type:'USER_LOGGED_OUT',
+   action
+   
+})
+export const fetchDetails=()=>dispatch=>{
+  dispatch()
 }
-export function userLoggedOut()
+ export const Filters =
 {
-  return{
-   type:USER_LOGGED_OUT,
-  }
+  USER_LOGGED_IN : 'USER_LOGGED_IN',
+  USER_LOGGED_OUT : 'USER_LOGGED_OUT'
+  
 }

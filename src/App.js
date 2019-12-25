@@ -10,6 +10,7 @@ import Details from './components/Details'
 import Default from './components/Default'
 import Modal from './components/Modal'
 import SignUp from './components/Forms/SignUp'
+//import Provider from 'react-redux'
 
 import{
   Switch,Route
