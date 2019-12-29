@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Form, Button } from 'semantic-ui-react'
 import {userLoggedIn} from '../../actions/actions'
 import {connect} from 'react-redux'
-
+import {NavBar}  from '../NavBar';
 import store from '../../store/store'
 
 class SignUp extends React.Component {
@@ -12,7 +12,6 @@ class SignUp extends React.Component {
     loading: false,
     errors: {}
   }
-
   onChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
@@ -22,7 +21,6 @@ class SignUp extends React.Component {
   onSubmit = (event) => {
     event.preventDefault();
     store.dispatch(userLoggedIn('logged_in',this.state.email,this.state.password))
-    console.log("State of the store : ",store.getState());
   }
   render() {
     const { loading, errors } = this.state;
@@ -55,4 +53,8 @@ class SignUp extends React.Component {
     )
   }
 }
-export default connect(null,{userLoggedIn})(SignUp)
+const mapStateToProps = state=>{
+console.log("Data returned by mapStateToProps : " + state.login.type);
+
+}
+export default connect(mapStateToProps)(SignUp);

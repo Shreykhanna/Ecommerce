@@ -3,9 +3,26 @@ import {Link} from 'react-router-dom'
 import logo from '../logo.svg'
 import styled from 'styled-components'
 import {ButtonContainer} from '../components/Button'
-export default class NavBar extends React.Component{
-render()
-{
+import store from '../store/store'
+import {connect} from 'react-redux';
+class NavBar extends React.Component{
+
+  render(){
+  var button;
+  var temp=false;
+  const state=store.getState();
+  console.log("State in navbar component: " +state);
+  if(state.login.type ==='USER_LOGGED_IN'){
+    button=<ButtonContainer>
+    <span className="mr-1"></span>
+     LogOut
+    </ButtonContainer>
+  }else{
+    button=<ButtonContainer>
+    <span className="mr-1"></span>
+     Login
+    </ButtonContainer>
+  }
   return(
   <NavWrapper className= "navbar navbar-expand-sm bg-primary navbar-dark px-sm-5 ">
     <Link to="/">
@@ -18,10 +35,7 @@ render()
    </ul>
    <div className="ml-auto">
    <Link to="/signup" className="ml-auto">
-   <ButtonContainer>
-   <span className="mr-1"></span>
-    SignUp
-   </ButtonContainer>
+    {button}
    </Link>
    <Link to="/cart" className="ml-auto">
    <ButtonContainer>
@@ -31,8 +45,14 @@ render()
    </Link>
   </div>
   </NavWrapper>
-  )}
+  )
 }
+}
+function mapStateToProps(state){
+console.log("Data returned by mapStateToProps on Navbar: " + state.login.type);
+}
+export default connect(mapStateToProps)(NavBar);
+
 const NavWrapper=styled.nav`
 background:var(--mainBlue);
 .nav-link{

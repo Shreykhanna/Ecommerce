@@ -1,12 +1,11 @@
 const logout=(state=[],action)=>{
     switch(action.type){
         case 'USER_LOGGED_OUT':
-            return[
-                ...state,
+            return(
                 {
                     action : action.text
                 }
-            ]
+            )
         default:
             return state
     }
