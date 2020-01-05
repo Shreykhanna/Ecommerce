@@ -33,7 +33,7 @@ render(){
    </ul>
    <div className="ml-auto">
    <Link to="/signup" className="ml-auto">
-    
+    {button}
    </Link>
    <Link to="/cart" className="ml-auto">
    <ButtonContainer>
