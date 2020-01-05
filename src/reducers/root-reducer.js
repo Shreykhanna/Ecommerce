@@ -3,6 +3,6 @@ import login from './login-reducer';
 import logout from './logout-reducer'
 
 export default combineReducers({
-  login,
-  logout
+  login:login,
+  logout:logout
 })

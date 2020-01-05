@@ -41,3 +41,7 @@ cursor:pointer;
 font-size:1.2rem;
 color:var(--mainYellow);
 }
+
+ Form.field label.label-email{
+  text-align: center;
+}

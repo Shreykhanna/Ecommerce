@@ -10,6 +10,8 @@ import Details from './components/Details'
 import Default from './components/Default'
 import Modal from './components/Modal'
 import SignUp from './components/Forms/SignUp'
+import store from './store/store'
+import {connect} from 'react-redux'
 //import Provider from 'react-redux'
 
 import{
@@ -29,5 +31,10 @@ const App= () =>(
       <Modal/>
     </div>
 );
-
-export default App;
+function mapStateToProps(state)
+{
+return{
+loginData:state.login
+}
+}
+export default connect(mapStateToProps)(App);

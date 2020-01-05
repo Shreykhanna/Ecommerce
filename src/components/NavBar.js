@@ -6,12 +6,10 @@ import {ButtonContainer} from '../components/Button'
 import store from '../store/store'
 import {connect} from 'react-redux';
 class NavBar extends React.Component{
-
-  render(){
+render(){
   var button;
-  var temp=false;
   const state=store.getState();
-  console.log("State in navbar component: " +state);
+  console.log("State in navbar component: " +state.login.type);
   if(state.login.type ==='USER_LOGGED_IN'){
     button=<ButtonContainer>
     <span className="mr-1"></span>
@@ -48,10 +46,8 @@ class NavBar extends React.Component{
   )
 }
 }
-function mapStateToProps(state){
-console.log("Data returned by mapStateToProps on Navbar: " + state.login.type);
-}
-export default connect(mapStateToProps)(NavBar);
+
+export default NavBar;
 
 const NavWrapper=styled.nav`
 background:var(--mainBlue);
