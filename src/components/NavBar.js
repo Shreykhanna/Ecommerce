@@ -7,7 +7,7 @@ import store from '../store/store'
 import {connect} from 'react-redux';
 class NavBar extends React.Component{
 render(){
-  var button;
+  var button,mycart,signup;
   const state=store.getState();
   console.log("State in navbar component: " +state.login.type);
   if(state.login.type ==='USER_LOGGED_IN'){
@@ -15,10 +15,18 @@ render(){
     <span className="mr-1"></span>
      LogOut
     </ButtonContainer>
+    mycart=<ButtonContainer>
+    <span className="mr-2">
+     <i className="fas fa-cart-plus"/>
+     </span>My Cart</ButtonContainer >
   }else{
     button=<ButtonContainer>
     <span className="mr-1"></span>
      Login
+    </ButtonContainer>
+    signup=<ButtonContainer>
+    <span className="mr-1"></span>
+     SignUp
     </ButtonContainer>
   }
   return(
@@ -32,14 +40,12 @@ render(){
    </li>
    </ul>
    <div className="ml-auto">
-   <Link to="/signup" className="ml-auto">
+   <Link to="/signin" className="ml-auto">
     {button}
    </Link>
+   <Link to="/signup" className="ml-auto">{signup}</Link>
    <Link to="/cart" className="ml-auto">
-   <ButtonContainer>
-   <span className="mr-2">
-    <i className="fas fa-cart-plus"/>
-    </span>My Cart</ButtonContainer >
+   {mycart}
    </Link>
   </div>
   </NavWrapper>

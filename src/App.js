@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart'
 import Details from './components/Details'
 import Default from './components/Default'
 import Modal from './components/Modal'
+import SignIn from './components/Forms/SignIn'
 import SignUp from './components/Forms/SignUp'
 import store from './store/store'
 import {connect} from 'react-redux'
@@ -25,6 +26,7 @@ const App= () =>(
       <Route exact path="/"            component={ProductList}/>
       <Route exact path="/details"     component= {Details}/>
       <Route exact path="/cart"        component={Cart}/>
+      <Route exact path="/signin"      component={SignIn}/>
       <Route exact path="/signup"      component={SignUp}/>
       <Route component={Default}/>
       </Switch>
