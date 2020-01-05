@@ -24,10 +24,11 @@ class SignUp extends React.Component {
     console.log("Email and password : ", this.state.email);
   };
   onSubmit = event => {
-    
-    store.dispatch(
-      userLoggedIn("logged_in", this.state.email, this.state.password)
-    );
+    event.preventDefault();
+    this.props.userLoggedIn(this.state);
+    // store.dispatch(
+    //   userLoggedIn("logged_in", this.state.email, this.state.password)
+    // );
   };
   render() {
     const { loading, errors } = this.state;
@@ -46,14 +47,14 @@ class SignUp extends React.Component {
                 </div>  
                  <button class="btn" value="Sign in">Sign In</button>
             </div>
-              </form>
+        </form>
     );
   }
 }
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
-    logindata: state.login.type
+    userLoggedIn: (data)=>dispatch(userLoggedIn(data))
   };
   // console.log("Data returned by mapStateToProps : " + state.login.type);
 };
-export default connect(mapStateToProps)(SignUp);
+export default connect(null,mapDispatchToProps)(SignUp);
