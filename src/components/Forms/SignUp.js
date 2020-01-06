@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {userSignUp} from '../../actions/actions'
-
+import {Redirect} from 'react-router-dom'
 class SignUp extends Component {
     state = {
         email: "",
@@ -10,7 +10,8 @@ class SignUp extends Component {
         address:"",
         loading: false,
         errors: {},
-        pagestate: ""
+        pagestate: "",
+        redirect : false
       };
       onChange = event => {
         this.setState({
@@ -21,6 +22,9 @@ class SignUp extends Component {
       onSubmit = event => {
         event.preventDefault();
         this.props.userSignUp(this.state);
+        this.setState({
+            redirect:true
+        })
         // store.dispatch(
         //   userLoggedIn("logged_in", this.state.email, this.state.password)
         // );
@@ -28,6 +32,9 @@ class SignUp extends Component {
       render() {
         const { loading, errors } = this.state;
         console.log("Store Data returned by SignUp component :  ", this.props);
+        if(this.state.redirect){
+            return(<Redirect to="/signin"></Redirect>)
+        }
         return (
           <form onSubmit={this.onSubmit}>
             <div class="login-box">
