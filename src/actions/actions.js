@@ -19,7 +19,8 @@ export const userSignUp = signUpData => {
       type: "USER_SIGN_UP",
       isloggedIn: true,
       email: signUpData.email,
-      password: signUpData.password
+      password: signUpData.password,
+      confirmpassword:signUpData.confirmpassword
     });
   };
 };

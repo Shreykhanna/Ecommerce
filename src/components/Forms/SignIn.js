@@ -9,13 +9,19 @@ import { Nav } from "react-bootstrap";
 import ProductsList from "../ProductsList";
 import { throws } from "assert";
 
+import{
+  Switch,Route,Redirect
+} from 'react-router-dom'
+
+
 class SignUp extends React.Component {
   state = {
     email: "",
     password: "",
     loading: false,
     errors: {},
-    pagestate: ""
+    pagestate: "",
+    redirectPage : false
   };
   onChange = event => {
     this.setState({
@@ -26,6 +32,9 @@ class SignUp extends React.Component {
   onSubmit = event => {
     event.preventDefault();
     this.props.userLoggedIn(this.state);
+    this.setState({redirectPage:true});
+    console.log("Data returned by store in signin component : " + this.props)
+    
     // store.dispatch(
     //   userLoggedIn("logged_in", this.state.email, this.state.password)
     // );
@@ -33,6 +42,11 @@ class SignUp extends React.Component {
   render() {
     const { loading, errors } = this.state;
     console.log("Store Data returned by SignUp component :  ", this.props);
+    if(this.state.redirectPage){
+      return(
+        <Redirect to='/'></Redirect>
+      )
+    }
     return (
       <form onSubmit={this.onSubmit}>
         <div class="login-box">
@@ -51,6 +65,7 @@ class SignUp extends React.Component {
     );
   }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
     userLoggedIn: (data)=>dispatch(userLoggedIn(data))
