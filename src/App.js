@@ -33,10 +33,6 @@ const App= () =>(
       <Modal/>
     </div>
 );
-function mapStateToProps(state)
-{
-return{
-loginData:state.login
-}
-}
-export default connect(mapStateToProps)(App);
+
+
+export default App;

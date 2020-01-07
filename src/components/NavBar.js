@@ -21,7 +21,7 @@ render(){
      </span>My Cart</ButtonContainer >
   }else{
     button=<ButtonContainer>
-    <span className="mr-1"></span>
+    <span classNapme="mr-1"></span>
      Login
     </ButtonContainer>
     signup=<ButtonContainer>

@@ -27,21 +27,22 @@ class SignUp extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     });
-    console.log("Email and password : ", this.state.email);
   };
   onSubmit = event => {
     event.preventDefault();
-    this.props.userLoggedIn(this.state);
-    this.setState({redirectPage:true});
-    console.log("Data returned by store in signin component : " + this.props)
+    this.props.userLoggedIn(this.state); 
+    if(store.getState().signup.email===this.state.email && store.getState().signup.password === this.state.password )
+    {
+      this.setState({redirectPage:true});
+    }
     
-    // store.dispatch(
-    //   userLoggedIn("logged_in", this.state.email, this.state.password)
-    // );
+    console.log("Email and password : ", this.state.email,this.state.password);
+    console.log("Data returned by store in signin component : " + store.getState().login.email+","+store.getState().login.password);
   };
   render() {
     const { loading, errors } = this.state;
     console.log("Store Data returned by SignUp component :  ", this.props);
+    console.log("Data returned by the store : "+store);
     if(this.state.redirectPage){
       return(
         <Redirect to='/'></Redirect>

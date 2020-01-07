@@ -17,7 +17,7 @@ class SignUp extends Component {
         this.setState({
           [event.target.name]: event.target.value
         });
-        console.log("Email and password : ", this.state.email);
+        
       };
       onSubmit = event => {
         event.preventDefault();
@@ -25,6 +25,7 @@ class SignUp extends Component {
         this.setState({
             redirect:true
         })
+        console.log("Email and password : ", this.state.email,this.state.password);
         // store.dispatch(
         //   userLoggedIn("logged_in", this.state.email, this.state.password)
         // );
@@ -60,6 +61,7 @@ class SignUp extends Component {
         );
       }   
 }
+
 function mapDispatchToProps(dispatch){
 return{
    userSignUp:(data)=>dispatch(userSignUp(data)) 
