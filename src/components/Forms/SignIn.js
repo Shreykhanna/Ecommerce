@@ -13,7 +13,6 @@ import{
   Switch,Route,Redirect
 } from 'react-router-dom'
 
-
 class SignUp extends React.Component {
   state = {
     email: "",

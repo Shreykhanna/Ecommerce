@@ -52,6 +52,36 @@ const ProductWrapper=styled.div`
   border-color:transparent;
   transition:all 0.2s linear;
 }
+
+
+@media only screen and (max-width: 770px) {
+  .card {
+   width:200px;
+   height:200px;
+  }
+  // .card-footer{
+  //   background:transparent;
+  //   border-top:transparent;
+  //   margin-bottom:10px;
+  //   transition:all 0.2s linear;
+  // }
+}
+
+@media only screen and (max-width:520px){
+  .card {
+    width:500px;
+    height:500px;
+    align:center;
+   }
+   // .card-footer{
+   //   background:transparent;
+   //   border-top:transparent;
+   //   margin-bottom:10px;
+   //   transition:all 0.2s linear;
+   // }
+   
+ }
+}
 .card-footer{
   background:transparent;
   border-top:transparent;
