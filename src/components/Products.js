@@ -69,8 +69,8 @@ const ProductWrapper=styled.div`
 
 @media only screen and (max-width:520px){
   .card {
-    width:500px;
-    height:500px;
+    width:400px;
+    height:400px;
     align:center;
    }
    // .card-footer{
@@ -79,8 +79,7 @@ const ProductWrapper=styled.div`
    //   margin-bottom:10px;
    //   transition:all 0.2s linear;
    // }
-   
- }
+   }
 }
 .card-footer{
   background:transparent;
